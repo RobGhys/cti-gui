@@ -9,10 +9,14 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatButtonModule} from "@angular/material/button";
 import {FormsModule} from "@angular/forms";
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { HttpClientModule } from "@angular/common/http";
+import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +26,12 @@ import {FormsModule} from "@angular/forms";
     MatCheckboxModule,
     MatButtonModule,
     FormsModule,
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent]
