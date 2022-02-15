@@ -18,6 +18,8 @@ import { MatTableModule } from '@angular/material/table';
 import { HeaderBarComponent } from './header-bar/header-bar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
     LayoutComponent,
     DataTableComponent,
     HeaderBarComponent,
+    SideBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatTableModule,
     MatToolbarModule,
     MatIconModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
