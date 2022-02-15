@@ -15,6 +15,9 @@ import { LayoutComponent } from './layout/layout.component';
 import { InMemoryDataService } from '../in-memory-data.service';
 import { DataTableComponent } from './data-table/data-table.component';
 import { MatTableModule } from '@angular/material/table';
+import { HeaderBarComponent } from './header-bar/header-bar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -22,6 +25,7 @@ import { MatTableModule } from '@angular/material/table';
     AppComponent,
     LayoutComponent,
     DataTableComponent,
+    HeaderBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,8 @@ import { MatTableModule } from '@angular/material/table';
       InMemoryDataService, {dataEncapsulation: false}
     ),
     MatTableModule,
+    MatToolbarModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
