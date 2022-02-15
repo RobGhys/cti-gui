@@ -9,6 +9,4 @@ export class AppComponent {
   title = 'cti-gui demo project';
   events: string[] = [];
   opened: boolean = true;
-
-  shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
 }
