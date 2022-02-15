@@ -5,11 +5,10 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
+    <!-- Open/Close sidebar -->
     <p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p>
     <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
-    <p>Events:</p>
-    <div class="example-events">
-      <div *ngFor="let e of events">{{e}}</div>
-    </div>
+    <!-- Data table-->
+    <app-data-table></app-data-table>
   </mat-sidenav-content>
 </mat-sidenav-container>
