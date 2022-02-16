@@ -8,7 +8,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatButtonModule} from "@angular/material/button";
-import {FormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { LayoutComponent } from './layout/layout.component';
@@ -23,6 +23,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FooterComponent } from './footer/footer.component';
+import { DialogElementsExampleDialog, SampleFormComponent } from './sample-form/sample-form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -33,6 +37,8 @@ import { FooterComponent } from './footer/footer.component';
     HeaderBarComponent,
     SideBarComponent,
     FooterComponent,
+    SampleFormComponent,
+    DialogElementsExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,9 @@ import { FooterComponent } from './footer/footer.component';
     MatSidenavModule,
     MatCheckboxModule,
     MatButtonModule,
+    MatNativeDateModule,
     FormsModule,
+    ReactiveFormsModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -55,6 +63,8 @@ import { FooterComponent } from './footer/footer.component';
     MatListModule,
     MatCardModule,
     MatPaginatorModule,
+    MatFormFieldModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
