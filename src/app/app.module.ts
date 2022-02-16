@@ -27,6 +27,7 @@ import { DialogElementsExampleDialog, SampleFormComponent } from './sample-form/
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatNativeDateModule } from '@angular/material/core';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     BrowserAnimationsModule,
     RouterModule,
     MatSliderModule,
+    AppRoutingModule,
     MatSidenavModule,
     MatCheckboxModule,
     MatButtonModule,
