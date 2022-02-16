@@ -26,23 +26,7 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-card>
-      <!-- Title -->
-      <mat-card-title>Data Table</mat-card-title>
-
-      <!-- Content -->
-      <mat-card-content>
-        <app-data-table></app-data-table>
-      </mat-card-content>
-
-      <!-- Footer -->
-      <mat-card-footer>
-        <mat-paginator [length]="100"
-                       [pageSize]="10"
-                       [pageSizeOptions]="[5, 10, 25, 100]"
-                       aria-label="Select page">
-        </mat-paginator>
-      </mat-card-footer>
-    </mat-card>
+  <!-- Table card -->
+  <app-data-table></app-data-table>
   </mat-sidenav-content>
 </mat-sidenav-container>
