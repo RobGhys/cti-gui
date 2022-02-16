@@ -20,6 +20,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -29,6 +32,7 @@ import { MatListModule } from '@angular/material/list';
     DataTableComponent,
     HeaderBarComponent,
     SideBarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +53,8 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatIconModule,
     MatListModule,
+    MatCardModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
