@@ -2,31 +2,20 @@
   <!-- Header bar -->
   <app-header-bar (toggleEventEmitter)="sidenav.toggle()"></app-header-bar>
 
-  <!-- Side bar -->
+  <!-- Sidenav container -->
   <mat-sidenav-container class="example-sidenav-container"
                          [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <!-- Sidenar bar -->
     <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
-      <mat-list>
-        <!-- Subsection 1 -->
-        <mat-list-item>
-          <mat-icon aria-hidden="false" aria-label="dashboard icon">account_circle</mat-icon>
-          User name
-        </mat-list-item>
-        <mat-divider></mat-divider>
-        <!-- Subsection 2 -->
-        <mat-list-item>
-          <mat-icon aria-hidden="false" aria-label="dashboard icon">speed</mat-icon>
-          Dashboard
-        </mat-list-item>
-        <app-side-bar></app-side-bar>
-        <mat-divider></mat-divider>
-      </mat-list>
+      <app-side-bar></app-side-bar>
     </mat-sidenav>
 
     <mat-sidenav-content>
-      <!-- Routing -->
+      <!-- Content -->
       <router-outlet></router-outlet>
+      <!-- Footer -->
+      <app-footer></app-footer>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

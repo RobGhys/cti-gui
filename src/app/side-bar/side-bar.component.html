@@ -1,21 +1,37 @@
-<mat-nav-list role="list">
-  <!-- Link icons -->
-  <mat-list-item role="listitem">
-    <a routerLink="/home" routerLinkActive="active">
-      <mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon>
-      Home
-    </a>
+<mat-list>
+  <!-- Subsection 1 -->
+  <mat-list-item>
+    <mat-icon aria-hidden="false" aria-label="dashboard icon">account_circle</mat-icon>
+    User name
   </mat-list-item>
-  <mat-list-item role="listitem">
-    <a routerLink="/table" routerLinkActive="active">
-      <mat-icon aria-hidden="false" aria-label="bank icon">account_balance</mat-icon>
-      Table
-    </a>
+  <mat-divider></mat-divider>
+  <!-- Subsection 2 -->
+  <mat-list-item>
+    <mat-icon aria-hidden="false" aria-label="dashboard icon">speed</mat-icon>
+    Dashboard
   </mat-list-item>
-  <mat-list-item role="listitem">
-    <a routerLink="/" routerLinkActive="active">
-      <mat-icon aria-hidden="false" aria-label="rocket icon">rocket_launch</mat-icon>
-      Rocket
-    </a>
-  </mat-list-item>
-</mat-nav-list>
+  <mat-nav-list role="list">
+    <!-- Link icons -->
+    <mat-list-item role="listitem">
+      <a routerLink="/home" routerLinkActive="active">
+        <mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon>
+        Home
+      </a>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <a routerLink="/table" routerLinkActive="active">
+        <mat-icon aria-hidden="false" aria-label="bank icon">account_balance</mat-icon>
+        Table
+      </a>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <a routerLink="/" routerLinkActive="active">
+        <mat-icon aria-hidden="false" aria-label="rocket icon">rocket_launch</mat-icon>
+        Rocket
+      </a>
+    </mat-list-item>
+  </mat-nav-list>
+  <mat-divider></mat-divider>
+</mat-list>
+
+
