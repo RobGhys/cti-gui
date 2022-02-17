@@ -1,29 +1,32 @@
-<!-- Header bar -->
-<app-header-bar (toggleEventEmitter)="sidenav.toggle()"></app-header-bar>
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <!-- Header bar -->
+  <app-header-bar (toggleEventEmitter)="sidenav.toggle()"></app-header-bar>
 
-<!-- Side bar -->
-<mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
-               (closed)="events.push('close!')">
-    <mat-list>
-      <!-- Subsection 1 -->
-      <mat-list-item>
-        <mat-icon aria-hidden="false" aria-label="dashboard icon">account_circle</mat-icon>
-        User name
-      </mat-list-item>
-      <mat-divider></mat-divider>
-      <!-- Subsection 2 -->
-      <mat-list-item>
-        <mat-icon aria-hidden="false" aria-label="dashboard icon">speed</mat-icon>
-        Dashboard
-      </mat-list-item>
-      <app-side-bar></app-side-bar>
-      <mat-divider></mat-divider>
-    </mat-list>
-  </mat-sidenav>
+  <!-- Side bar -->
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-list>
+        <!-- Subsection 1 -->
+        <mat-list-item>
+          <mat-icon aria-hidden="false" aria-label="dashboard icon">account_circle</mat-icon>
+          User name
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <!-- Subsection 2 -->
+        <mat-list-item>
+          <mat-icon aria-hidden="false" aria-label="dashboard icon">speed</mat-icon>
+          Dashboard
+        </mat-list-item>
+        <app-side-bar></app-side-bar>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </mat-sidenav>
 
-  <mat-sidenav-content>
-    <!-- Routing -->
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    <mat-sidenav-content>
+      <!-- Routing -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
