@@ -37,6 +37,7 @@ import { HomeComponent } from './home/home.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
+import { DataDetailComponent } from './data-detail/data-detail.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     DialogElementsExampleDialog,
     PagenotfoundComponent,
     HomeComponent,
+    DataDetailComponent,
   ],
   imports: [
     BrowserModule,

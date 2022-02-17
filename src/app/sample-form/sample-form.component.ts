@@ -3,7 +3,7 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dial
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 
-import {PeriodicElement} from '../../periodicElement';
+import {Element} from '../../element';
 
 @Component({
   selector: 'app-sample-form',
@@ -50,7 +50,7 @@ export class DialogElementsExampleDialog {
   constructor(
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<DialogElementsExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: PeriodicElement,
+    @Inject(MAT_DIALOG_DATA) public data: Element,
   ) {}
 
   onNoClick(): void {
