@@ -13,12 +13,22 @@ export class SampleFormComponent {
   openDialog() {
     this.dialog.open(DialogElementsExampleDialog);
   }
-
 }
 
+/** @title Form field with error messages */
 @Component({
   selector: 'dialog-elements-example-dialog',
   templateUrl: 'dialog-elements-example-dialog.html',
 })
-export class DialogElementsExampleDialog {}
+export class DialogElementsExampleDialog {
+  name = new FormControl('', [Validators.required]);
+
+  getErrorMessage() {
+    if (this.name.hasError('required')) {
+      return 'You must enter a value';
+    }
+
+    return this.name.hasError('name') ? 'Not a valid name' : '';
+  }
+}
 
