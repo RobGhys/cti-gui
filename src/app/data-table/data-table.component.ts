@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {LiveAnnouncer} from '@angular/cdk/a11y';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import {MatSort, Sort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 
 export interface PeriodicElement {
   name: string;
@@ -25,14 +28,29 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.css']
 })
-export class DataTableComponent implements OnInit {
+export class DataTableComponent implements AfterViewInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  constructor() { }
+  constructor(private _liveAnnouncer: LiveAnnouncer) {}
 
-  ngOnInit(): void {
+  @ViewChild(MatSort) sort!: MatSort;
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
   }
 
+  /** Announce the change in sort state for assistive technology. */
+  announceSortChange(sortState: Sort) {
+    // This example uses English messages. If your application supports
+    // multiple language, you would internationalize these strings.
+    // Furthermore, you can customize the message to add additional
+    // details about the values being sorted.
+    if (sortState.direction) {
+      this._liveAnnouncer.announce(`Sorted ${ sortState.direction }ending`).then(r  => console.log('new sort'));
+    } else {
+      this._liveAnnouncer.announce('Sorting cleared').then(r => console.log('cleared sorting'));
+    }
+  }
 }

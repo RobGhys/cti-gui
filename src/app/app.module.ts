@@ -28,7 +28,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AppRoutingModule } from './app-routing.module';
-
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -53,6 +53,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -67,6 +68,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatPaginatorModule,
     MatFormFieldModule,
     MatDialogModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
