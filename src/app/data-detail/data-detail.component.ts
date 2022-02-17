@@ -25,7 +25,7 @@ export class DataDetailComponent implements OnInit {
   }
 
   getElement(): void {
-    const id = Number(this.route.snapshot.paramMap.get(''));
+    const id = Number(this.route.snapshot.paramMap.get('id'));
     this.elementService.getElementById(id)
       .subscribe(element => this.element = element);
   }
