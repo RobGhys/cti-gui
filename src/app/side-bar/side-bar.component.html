@@ -1,14 +1,21 @@
-<mat-list role="list">
+<mat-nav-list role="list">
+  <!-- Link icons -->
   <mat-list-item role="listitem">
-    <a routerLink="/"><mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon>
-    Home</a>
+    <a routerLink="/home" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon>
+      Home
+    </a>
   </mat-list-item>
   <mat-list-item role="listitem">
-    <mat-icon aria-hidden="false" aria-label="bank icon">account_balance</mat-icon>
-    Table
+    <a routerLink="/table" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="bank icon">account_balance</mat-icon>
+      Table
+    </a>
   </mat-list-item>
   <mat-list-item role="listitem">
-    <mat-icon aria-hidden="false" aria-label="rocket icon">rocket_launch</mat-icon>
-    Rocket
+    <a routerLink="/" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="rocket icon">rocket_launch</mat-icon>
+      Rocket
+    </a>
   </mat-list-item>
-</mat-list>
+</mat-nav-list>

@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-
-export interface DialogData {
-  animal: string;
-  name: string;
-}
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-sample-form',

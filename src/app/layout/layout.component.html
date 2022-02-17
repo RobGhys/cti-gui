@@ -5,12 +5,25 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
                (closed)="events.push('close!')">
-    Section 1
-    <app-side-bar></app-side-bar>
+    <mat-list>
+      <!-- Subsection 1 -->
+      <mat-list-item>
+        <mat-icon aria-hidden="false" aria-label="dashboard icon">account_circle</mat-icon>
+        User name
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <!-- Subsection 2 -->
+      <mat-list-item>
+        <mat-icon aria-hidden="false" aria-label="dashboard icon">speed</mat-icon>
+        Dashboard
+      </mat-list-item>
+      <app-side-bar></app-side-bar>
+      <mat-divider></mat-divider>
+    </mat-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <!-- Table card -->
-    <app-data-table></app-data-table>
+    <!-- Routing -->
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

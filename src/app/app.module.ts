@@ -29,6 +29,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AppRoutingModule } from './app-routing.module';
 import { MatSortModule } from '@angular/material/sort';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,9 @@ import { MatSortModule } from '@angular/material/sort';
     SideBarComponent,
     FooterComponent,
     SampleFormComponent,
-    DialogElementsExampleDialog
+    DialogElementsExampleDialog,
+    PagenotfoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +76,9 @@ import { MatSortModule } from '@angular/material/sort';
     MatFormFieldModule,
     MatDialogModule,
     MatSortModule,
+    MatTooltipModule,
+    MatSelectModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

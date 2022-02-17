@@ -1,5 +1,29 @@
-<h1 mat-dialog-title>Dialog with elements</h1>
-<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
+<h1 mat-dialog-title>Create new item</h1>
+<div mat-dialog-content>
+  <!-- Name -->
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="New item's name">
+      <mat-icon matSuffix>description</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <!-- Symbol -->
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Symbol</mat-label>
+      <mat-select>
+        <mat-option value="A">A</mat-option>
+        <mat-option value="B">B</mat-option>
+        <mat-option value="C">C</mat-option>
+      </mat-select>
+      <mat-hint align="start">Select symbol</mat-hint>
+    </mat-form-field>
+  </div>
+
+
+</div>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Close</button>
 </div>
