@@ -34,6 +34,9 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { HomeComponent } from './home/home.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,7 @@ import { HomeComponent } from './home/home.component';
     SampleFormComponent,
     DialogElementsExampleDialog,
     PagenotfoundComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,6 +82,9 @@ import { HomeComponent } from './home/home.component';
     MatTooltipModule,
     MatSelectModule,
     MatInputModule,
+    MatGridListModule,
+    MatMenuModule,
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
