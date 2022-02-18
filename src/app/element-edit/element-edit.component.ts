@@ -17,10 +17,7 @@ export class ElementEditComponent implements ElementCrudComponent {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogElementUpdate, {
-
-      data: { id: this.elementId},
-    });
+    this.dialog.open(DialogElementUpdate, { data: { id: this.elementId } });
   }
 }
 
@@ -39,10 +36,14 @@ export class DialogElementUpdate extends DialogElement {
   }
 
   getElement(): void {
+    // Get id from the data table
     const id = Number(this.data.id);
+
+    // Get the element
     this.elementService.getElementById(id)
       .subscribe(element => {
-        this.element = element
+        this.element = element;
+
         this.elementsForm.patchValue({
           name: this.element.name,
           weight: this.element.weight,

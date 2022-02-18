@@ -12,11 +12,10 @@ import { MatPaginator } from '@angular/material/paginator';
   templateUrl: './element-table.component.html',
   styleUrls: ['./element-table.component.css']
 })
-export class ElementTableComponent implements AfterViewInit, OnInit {
+export class ElementTableComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'name', 'weight', 'symbol'];
-  elements: Element[] = [];
-  dataSource = new MatTableDataSource<Element>(this.elements);
+  dataSource : any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -26,17 +25,15 @@ export class ElementTableComponent implements AfterViewInit, OnInit {
 
   ngOnInit(): void {
     this.getElements();
-    console.log(this.elements.length)
   }
 
   getElements(): void {
     this.elementService.getElements()
-      .subscribe(elements => this.elements = elements);
-  }
-
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
+      .subscribe(elements => {
+        this.dataSource = new MatTableDataSource<Element>(elements);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+      });
   }
 
   /** Announce the change in sort state for assistive technology. */

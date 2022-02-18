@@ -3,8 +3,6 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 import { Element } from './element';
 
-const imageFolder = "assets/images/";
-
 @Injectable({
   providedIn: 'root'
 })

@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-
+import { MessageService } from './message.service';
 import { Element } from '../element';
-import { ELEMENTS } from '../mock-elements';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
@@ -18,7 +17,9 @@ export class ElementService {
     )
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService) { }
 
   /********************************
    *            GET               *
@@ -34,7 +35,7 @@ export class ElementService {
     return this.http.get<Element[]>(this.elementsUrl)
       .pipe( // catch an Observable that failed
         tap(_ => this.log('fetched heroes')),
-        catchError(this.handleError<Element[]>('getHeroes', []))
+        catchError(this.handleError<Element[]>('getElements', []))
       );
   }
 
@@ -50,6 +51,20 @@ export class ElementService {
       tap(_ => this.log(`fetched element id=${id}`)),
       catchError(this.handleError<Element>(`getElementById id=${id}`))
     );
+  }
+
+  /** GET hero by id. Return `undefined` when id not found */
+  getHeroNo404<Data>(id: number): Observable<Element> {
+    const url = `${this.elementsUrl}/?id=${id}`;
+    return this.http.get<Element[]>(url)
+      .pipe(
+        map(elements => elements[0]), // returns a {0|1} element array
+        tap(h => {
+          const outcome = h ? 'fetched' : 'did not find';
+          this.log(`${outcome} element id=${id}`);
+        }),
+        catchError(this.handleError<Element>(`getElement id=${id}`))
+      );
   }
 
   /********************************
@@ -105,7 +120,8 @@ export class ElementService {
     }
   }
 
-  private log(fetchedHeroes: string) {
+  private log(message: string) {
+    this.messageService.add(`HeroService: ${message}`);
 
   }
 }
