@@ -40,7 +40,8 @@
       <div>
         <mat-form-field appearance="fill">
           <mat-label for="element-symbol">Symbol</mat-label>
-          <mat-select id="element-symbol" [(ngModel)]="element.symbol">
+          <mat-select id="element-symbol" [(value)]="element.symbol">
+            <mat-option>None</mat-option>
             <mat-option value="A">A</mat-option>
             <mat-option value="B">B</mat-option>
             <mat-option value="C">C</mat-option>
@@ -49,8 +50,13 @@
         </mat-form-field>
       </div>
 
-      <button mat-raised-button type="button" color="accent"
-              (click)="goBack()">Back</button>
+      <div>
+        <button mat-raised-button type="button" color="accent"
+                (click)="goBack()">Back</button>
+
+        <button mat-raised-button color="primary"
+                (click)="save()" type="button">Save</button>
+      </div>
     </div>
   </mat-card-content>
   <!-- Footer -->

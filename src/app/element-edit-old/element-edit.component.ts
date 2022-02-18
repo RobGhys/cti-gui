@@ -4,13 +4,12 @@ import { Location } from '@angular/common';
 
 import { Element } from '../../element';
 import { ElementService } from '../element.service';
-
 @Component({
-  selector: 'app-data-detail',
-  templateUrl: './data-detail.component.html',
-  styleUrls: ['./data-detail.component.css']
+  selector: 'app-element-edit',
+  templateUrl: './element-edit.component.html',
+  styleUrls: ['./element-edit.component.css']
 })
-export class DataDetailComponent implements OnInit {
+export class ElementEditComponent implements OnInit {
 
   element: Element | undefined;
 
@@ -28,6 +27,13 @@ export class DataDetailComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.elementService.getElementById(id)
       .subscribe(element => this.element = element);
+  }
+
+  save(): void {
+    if (this.element) {
+      this.elementService.updateElement(this.element)
+        .subscribe(() => this.goBack());
+    }
   }
 
   goBack(): void {

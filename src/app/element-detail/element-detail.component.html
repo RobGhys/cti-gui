@@ -1,0 +1,27 @@
+<mat-card>
+  <!-- Title -->
+  <mat-card-title>
+    <mat-card-title>Item details</mat-card-title>
+  </mat-card-title>
+
+  <!-- Content -->
+  <mat-card-content>
+    <div *ngIf="element">
+      <h2>{{element.name}} Details</h2>
+
+        <mat-list role="list">
+          <mat-list-item role="listitem">Id: {{element.id}}</mat-list-item>
+          <mat-list-item role="listitem">Name: {{element.name}}</mat-list-item>
+          <mat-list-item role="listitem">Weight: {{element.weight}}</mat-list-item>
+          <mat-list-item role="listitem">Weight: {{element.symbol}}</mat-list-item>
+        </mat-list>
+    </div>
+    <button mat-raised-button type="button" color="accent"
+            (click)="goBack()">Back
+    </button>
+
+  </mat-card-content>
+  <!-- Footer -->
+  <mat-card-footer>
+  </mat-card-footer>
+</mat-card>

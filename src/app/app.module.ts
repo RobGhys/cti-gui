@@ -13,7 +13,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { LayoutComponent } from './layout/layout.component';
 import { InMemoryDataService } from '../in-memory-data.service';
-import { DataTableComponent } from './data-table/data-table.component';
+import { ElementTableComponent } from './element-table/element-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { HeaderBarComponent } from './header-bar/header-bar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -23,7 +23,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FooterComponent } from './footer/footer.component';
-import { DialogElementsExampleDialog, SampleFormComponent } from './sample-form/sample-form.component';
+import { DialogElementCreate, ElementCreateComponent } from './element-create/element-create.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -37,21 +37,31 @@ import { HomeComponent } from './home/home.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
-import { DataDetailComponent } from './data-detail/data-detail.component';
+import { ElementDetailComponent } from './element-detail/element-detail.component';
+import { MessageComponent } from './message/message.component';
+import { DialogElement, SharedComponent } from './shared/shared.component';
+import { FiltersComponent } from './filters/filters.component';
+import { DialogElementUpdate, ElementEditComponent } from './element-edit/element-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    DataTableComponent,
+    ElementTableComponent,
     HeaderBarComponent,
     SideBarComponent,
     FooterComponent,
-    SampleFormComponent,
-    DialogElementsExampleDialog,
+    ElementCreateComponent,
+    DialogElementCreate,
     PagenotfoundComponent,
     HomeComponent,
-    DataDetailComponent,
+    ElementDetailComponent,
+    MessageComponent,
+    SharedComponent,
+    FiltersComponent,
+    ElementEditComponent,
+    DialogElement,
+    DialogElementUpdate
   ],
   imports: [
     BrowserModule,

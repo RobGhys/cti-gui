@@ -4,15 +4,14 @@ import {MatSort, Sort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 
 import {Element} from '../../element';
-import {ELEMENTS} from '../../mock-elements';
 import { ElementService } from '../element.service';
 
 @Component({
   selector: 'app-data-table',
-  templateUrl: './data-table.component.html',
-  styleUrls: ['./data-table.component.css']
+  templateUrl: './element-table.component.html',
+  styleUrls: ['./element-table.component.css']
 })
-export class DataTableComponent implements AfterViewInit, OnInit {
+export class ElementTableComponent implements AfterViewInit, OnInit {
 
   displayedColumns: string[] = ['id', 'name', 'weight', 'symbol'];
   elements: Element[] = [];
