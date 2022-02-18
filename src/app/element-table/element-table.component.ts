@@ -5,6 +5,7 @@ import {MatTableDataSource} from '@angular/material/table';
 
 import {Element} from '../../element';
 import { ElementService } from '../element.service';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-data-table',
@@ -15,8 +16,9 @@ export class ElementTableComponent implements AfterViewInit, OnInit {
 
   displayedColumns: string[] = ['id', 'name', 'weight', 'symbol'];
   elements: Element[] = [];
-
-  dataSource = new MatTableDataSource(this.elements);
+  dataSource = new MatTableDataSource<Element>(this.elements);
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
     private elementService: ElementService,
@@ -32,10 +34,9 @@ export class ElementTableComponent implements AfterViewInit, OnInit {
       .subscribe(elements => this.elements = elements);
   }
 
-  @ViewChild(MatSort) sort!: MatSort;
-
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   /** Announce the change in sort state for assistive technology. */

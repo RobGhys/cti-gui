@@ -22,6 +22,16 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
       {id: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
       {id: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+      {id: 11, name: 'Sodium', weight: 22.9897, symbol: 'Na'},
+      {id: 12, name: 'Magnesium', weight: 24.305, symbol: 'Mg'},
+      {id: 13, name: 'Aluminum', weight: 26.9815, symbol: 'Al'},
+      {id: 14, name: 'Silicon', weight: 28.0855, symbol: 'Si'},
+      {id: 15, name: 'Phosphorus', weight: 30.9738, symbol: 'P'},
+      {id: 16, name: 'Sulfur', weight: 32.065, symbol: 'S'},
+      {id: 17, name: 'Chlorine', weight: 35.453, symbol: 'Cl'},
+      {id: 18, name: 'Argon', weight: 39.948, symbol: 'Ar'},
+      {id: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
+      {id: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
     ];
 
     return {elements};
