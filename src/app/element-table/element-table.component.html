@@ -64,6 +64,7 @@
   <!-- Footer -->
   <mat-card-footer>
     <mat-paginator showFirstLastButtons
+                   [pageSize]="10"
                    [pageSizeOptions]="[5, 10, 25, 100]"
                    aria-label="Select page">
     </mat-paginator>
