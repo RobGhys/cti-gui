@@ -3,7 +3,7 @@ import { Element } from '../../element';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ElementService } from '../element.service';
 import { Location } from '@angular/common';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogElementCreate } from '../element-create/element-create.component';
 
@@ -19,7 +19,7 @@ export class SharedComponent implements OnInit {
   ngOnInit(): void { }
 }
 
-export interface DialogElementI {
+export interface DialogElementI extends OnInit {
   onNoClick(): void;
   save(): void;
   goBack(): void;
@@ -45,6 +45,7 @@ export class DialogElement implements DialogElementI {
     protected elementService: ElementService,
     protected location: Location,
     protected router: Router,
+    protected route: ActivatedRoute,
     protected fb: FormBuilder,
     protected dialogRef: MatDialogRef<DialogElement>,
     @Inject(MAT_DIALOG_DATA) public data: Element,
@@ -63,6 +64,9 @@ export class DialogElement implements DialogElementI {
 
   goBack(): void {
     this.location.back();
+  }
+
+  ngOnInit(): void {
   }
 
   /*getErrorMessage() {

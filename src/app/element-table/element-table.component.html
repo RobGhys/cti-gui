@@ -24,7 +24,7 @@
             <a routerLink="/details/{{element.id}}">
               <mat-icon color="accent">search</mat-icon>
             </a>
-            <app-element-edit></app-element-edit>
+            <app-element-edit [elementId]="element.id"></app-element-edit>
           {{element.id}}
         </td>
       </ng-container>
