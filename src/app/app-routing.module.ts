@@ -9,7 +9,7 @@ import { ElementDetailComponent } from './element-detail/element-detail.componen
 // "path": matches the URL in the browser's address bar
 // "component": the component that the router should create when navigating to this route
 const routes: Routes = [
-  { path: '', redirectTo: '/table', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'table', component: ElementTableComponent },
   { path: 'details/:id', component: ElementDetailComponent },

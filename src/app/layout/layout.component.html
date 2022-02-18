@@ -5,8 +5,8 @@
   <!-- Sidenav container -->
   <mat-sidenav-container class="example-sidenav-container"
                          [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <!-- Sidenar bar -->
-    <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
+    <!-- Sidenav bar -->
+    <mat-sidenav [opened]="true" #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'"
                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <app-side-bar></app-side-bar>
     </mat-sidenav>
