@@ -36,6 +36,10 @@ export class ElementTableComponent implements OnInit {
       });
   }
 
+  delete(element : Element): void {
+    this.elementService.deleteElement(element.id).subscribe(el => this.getElements());
+  }
+
   /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
     // This example uses English messages. If your application supports

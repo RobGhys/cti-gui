@@ -95,6 +95,18 @@ export class ElementService {
     );
   }
 
+  /********************************
+   *            DELETE            *
+   ********************************/
+
+  deleteElement(id: number) : Observable<Element> {
+    const url = `${this.elementsUrl}/${id}`;
+
+    return this.http.delete<Element>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`deleted element id=${id}`)),
+      catchError(this.handleError<Element>('deleteElement'))
+    );
+  }
 
   /********************************
    *            ERROR             *
