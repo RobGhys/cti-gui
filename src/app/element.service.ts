@@ -67,6 +67,19 @@ export class ElementService {
       );
   }
 
+  searchElements(term: string): Observable<Element[]> {
+    if (!term.trim()) {
+      // return empty Element array
+      return of([]);
+    }
+    return this.http.get<Element[]>(`${this.elementsUrl}/?name=${term}`).pipe(
+      tap(x => x.length ?
+          this.log(`found elements matching "${term}"`) :
+          this.log(`no elements matching "${term}"`)),
+      catchError(this.handleError<Element[]>('searchElements', []))
+    );
+  }
+
   /********************************
    *            POST              *
    ********************************/

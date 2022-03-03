@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DialogElement, ElementCrudComponent } from '../shared/shared.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Element } from '../../element';
 
 @Component({
   selector: 'app-element-edit',
@@ -29,16 +30,25 @@ export class ElementEditComponent implements ElementCrudComponent {
 export class DialogElementUpdate extends DialogElement {
 
   override save(): void {
-    if (this.element) {
-      this.elementService.updateElement(this.element)
-        .subscribe(() => this.goBack());
+    // Form must be valid
+    if (this.elementsForm.valid) {
+      const p = {...this.element, ...this.elementsForm.value};
+
+      this.elementService.updateElement(p as Element)
+        .subscribe({
+          next: newElement => {
+            console.log(newElement);
+            return this.onSaveComplete();
+          },
+          //error: err => this.err
+        });
     }
   }
 
   getElement(): void {
     // Get id from the data table
     const id = Number(this.data.id);
-
+    console.log(id)
     // Get the element
     this.elementService.getElementById(id)
       .subscribe(element => {
@@ -50,6 +60,12 @@ export class DialogElementUpdate extends DialogElement {
           symbol: this.element.symbol
         })
       });
+  }
+
+  private onSaveComplete(): void {
+    this.elementsForm.reset();
+    //this.router.navigate(['/table'])
+    this.goBack();
   }
 
   override ngOnInit(): void {
