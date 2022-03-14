@@ -52,4 +52,8 @@ export class ElementTableComponent implements OnInit {
       this._liveAnnouncer.announce('Sorting cleared').then(r => console.log('cleared sorting'));
     }
   }
+
+  refreshTable() {
+    this.getElements();
+  }
 }

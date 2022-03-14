@@ -3,7 +3,7 @@
   <mat-card-title-group>
     <mat-card-title>Data Table</mat-card-title>
       <span class="flex-box">
-        <app-element-create></app-element-create>
+        <app-element-create (close)="refreshTable()"></app-element-create>
         <app-filters></app-filters>
       </span>
   </mat-card-title-group>

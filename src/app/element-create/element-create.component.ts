@@ -1,4 +1,4 @@
-import { Component, Inject, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Inject, Output, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 
 import { DialogElement, ElementCrudComponent } from '../shared/shared.component';
@@ -12,8 +12,7 @@ import { MatTable } from '@angular/material/table';
   styleUrls: ['./element-create.component.css']
 })
 export class ElementCreateComponent implements ElementCrudComponent {
-@ViewChild(MatDialog) matDialog!: MatDialog;
-@ViewChild(MatTable) matTable!: MatTable<Element>;
+@Output() close: EventEmitter<any> = new EventEmitter();
 
   // Form elements
   name!: string;
@@ -38,7 +37,7 @@ export class ElementCreateComponent implements ElementCrudComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('coucou');
-      this.matTable.renderRows()
+      this.close.emit();
     });
   }
 
