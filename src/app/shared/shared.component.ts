@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Element } from '../../element';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { ElementService } from '../element.service';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -46,7 +46,7 @@ export class DialogElement implements DialogElementI {
     protected location: Location,
     protected router: Router,
     protected route: ActivatedRoute,
-    protected fb: FormBuilder,
+    protected fb: UntypedFormBuilder,
     protected dialogRef: MatDialogRef<DialogElement>,
     @Inject(MAT_DIALOG_DATA) public data: Element,
   ) { }
